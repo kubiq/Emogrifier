@@ -135,7 +135,7 @@ class Emogrifier {
         // grab any existing style blocks from the html and append them to the existing CSS
         // (these blocks should be appended so as to have precedence over conflicting styles in the existing CSS)
         $css = $this->css;
-        $nodes = @$xpath->query('//style');
+        $nodes = @$xpath->query('//style[@media="inline"]');
         foreach ($nodes as $node) {
             // append the css
             $css .= "\n\n{$node->nodeValue}";
